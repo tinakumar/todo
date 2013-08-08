@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <style>
+      body { width: 960px; margin: 20px auto;}
+    </style>
+
+</head>
+<body>
+  <h1>To Do List!</h1>
+<form>
+    <label>Add to List!</label>
+    <input type="text" />
+</form>
+<ul></ul>
+
+<script>
+  $('form').submit(function() {
+    if ($('input').val() !== '') {
+        var input_value = $('input').val();
+        $('ul').prepend('<li>' + input_value + '</li>');
+
+};
+    $('input').val('');
+        return false;
+});
+
+  $("ul").on('click', "li", function (t) {
+    $(t.target).remove();
+
+});
+
+</script>
+</body>
+</html>
